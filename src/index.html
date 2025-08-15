@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с HTML-формами</title>
+</head>
+<body>
+    <h1>Работа с HTML-формами</h1>
+    <form action="" class="form" novalidate>
+        <div class="form-control">
+            <input type="text" id="login" name="login" class="input login" placeholder="login" required>
+        </div>
+        <div class="form-control">
+            <input type="email" name="email" id="email" class="input email" placeholder="email" required>
+        </div>
+        <div class="form-control">
+            <input name="credit-card" class="input credit-card" placeholder="credit card" required pattern="\d{16}">
+        </div>
+        <div>
+            <button class="btn" type="submit">Ok</button>
+            <button class="btn" type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
