@@ -147,3 +147,173 @@ button:hover {
   border-right: 6px solid transparent;
   border-top: 6px solid #fff;
 }
+
+/* Стили для задачи со звездочкой CRUD */
+
+/* Контейнер */
+.container-short {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Заголовок */
+.container-short h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Кнопка добавить */
+.btn-add {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* Таблица */
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-table th,
+.item-table td {
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.item-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.item-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Кнопки редактирования и удаления */
+.item-table .btn-edit,
+.item-table .btn-delete {
+  padding: 6px 10px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.item-table .btn-edit {
+  background-color: #4caf50;
+}
+
+.item-table .btn-edit:hover {
+  background-color: #3e8e41;
+}
+
+.item-table .btn-delete {
+  background-color: #f44336;
+}
+
+.item-table .btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+/* Модалка */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 320px; /* чуть шире для отступов */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Лейблы */
+.modal-content label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #333;
+  width: 100%; /* чтобы инпуты занимали всю ширину */
+}
+
+/* Поля ввода */
+.modal-content input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  width: 100%; /* инпут теперь тянется на всю ширину label */
+  box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+}
+
+.modal-content input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 0 2px #ff9a9e44;
+}
+
+/* Сообщения об ошибках */
+.error-name,
+.error-price {
+  color: #f44336;
+  font-size: 12px;
+  min-height: 16px;
+  margin-top: 2px;
+}
+
+/* Кнопки в модалке */
+.modal-content .btn-save,
+.modal-content .btn-cancel {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.modal-content .btn-save {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.modal-content .btn-save:hover {
+  background-color: #3e8e41;
+}
+
+.modal-content .btn-cancel {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.modal-content .btn-cancel:hover {
+  background-color: #d32f2f;
+}
