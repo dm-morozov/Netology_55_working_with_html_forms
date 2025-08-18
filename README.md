@@ -1,6 +1,8 @@
 # Работа с HTML-формами и Popover на чистом JS
 
-[![Build Status](https://github.com/<твое_имя_пользователя>/<название_репозитория>/actions/workflows/main.yml/badge.svg)](https://github.com/<твое_имя_пользователя>/<название_репозитория>/actions)
+[![Build status](https://ci.appveyor.com/api/projects/status/awc042krfial5vnh?svg=true)](https://ci.appveyor.com/project/dm-morozov/netology-55-working-with-html-forms)
+![CI](https://github.com/dm-morozov/Netology_55_working_with_html_forms/actions/workflows/web.yaml/badge.svg)
+![Netology](https://img.shields.io/badge/TypeScript-JavaScript-blue)
 
 Демонстрация работы с HTML-формами, валидации, кешированием данных через LocalStorage и реализацией виджета Popover без использования jQuery или Bootstrap.  
 
@@ -57,7 +59,7 @@ yarn build
 4. Локальный запуск для разработки:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 5. Запуск тестов:
@@ -70,7 +72,7 @@ yarn test
 
 ## 🌐 Ссылка на GitHub Pages
 
-[Попробовать демо](https://<твое_имя_пользователя>.github.io/<название_репозитория>/)
+[Попробовать демо](https://dm-morozov.github.io/Netology_55_working_with_html_forms/)
 
 ---
 
