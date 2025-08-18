@@ -1,6 +1,8 @@
 console.log("LocalStorage.ts запущен");
 
-const formForStorage = document.querySelector(".form") as HTMLFormElement | null;
+const formForStorage = document.querySelector(
+  ".form",
+) as HTMLFormElement | null;
 
 const STORAGE_KEY = "formData";
 

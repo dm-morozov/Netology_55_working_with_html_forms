@@ -3,7 +3,7 @@ export default class Popover {
   private title: string;
   private content: string;
   private popover: HTMLElement | null = null;
-  
+
   constructor(element: HTMLElement, title: string, content: string) {
     this.element = element;
     this.title = title;
@@ -24,7 +24,7 @@ export default class Popover {
     console.log("Привет");
 
     this.popover = document.createElement("div");
-    this.popover.classList.add('popover');
+    this.popover.classList.add("popover");
 
     this.popover.innerHTML = `
       <div class="popover-title">${this.title}</div>
@@ -41,11 +41,16 @@ export default class Popover {
     // Позицианируем наш popover
     this.popover.style.top = `${elementPosition.top - popoverPosition.height - 10 + window.scrollY}px`;
     this.popover.style.left = `${elementPosition.left + elementPosition.width / 2 - popoverPosition.width / 2 + window.scrollX}px`;
-    console.log(elementPosition.left, elementPosition.width / 2, popoverPosition.width / 2, window.scrollX)
+    console.log(
+      elementPosition.left,
+      elementPosition.width / 2,
+      popoverPosition.width / 2,
+      window.scrollX,
+    );
 
-        // позиционируем стрелочку
+    // позиционируем стрелочку
     const arrow = this.popover.querySelector(
-      ".popover-arrow"
+      ".popover-arrow",
     ) as HTMLElement | null;
     if (arrow) {
       const arrowLeft =
@@ -54,7 +59,6 @@ export default class Popover {
         (this.popover.getBoundingClientRect().left + 6); // 6px = половина ширины стрелки
       arrow.style.left = `${arrowLeft}px`;
     }
-
   }
 
   private hide() {
