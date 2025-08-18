@@ -45,7 +45,7 @@ button:hover {
 
 /* Стили для контейнера */
 .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -99,3 +99,51 @@ button:hover {
     gap: 10px;
 }
 
+.btn-popover {
+    margin: 30px auto;
+    display: block;
+}
+
+.popover {
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  width: 250px;
+  text-align: center;
+}
+
+.popover-title {
+    padding: .5rem .75rem;
+    background-color: #f7f7f7;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #ebebeb;
+    font-weight: bold;
+}
+
+.popover-content {
+    padding: .5rem .75rem;
+    color: #212529;
+}
+
+/* стрелка */
+.popover-arrow {
+  position: absolute;
+  bottom: -7px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ccc;
+}
+
+.popover-arrow::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+}
