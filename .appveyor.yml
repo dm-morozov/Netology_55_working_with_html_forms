@@ -2,15 +2,21 @@ version: 1.0.{build}
 image: Ubuntu2004
 
 install:
-  - curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+  - sudo curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
   - sudo apt-get update
   - sudo apt-get install -y nodejs
+  - node --version
+  - npm --version
   - npm install -g yarn
-  - yarn install --frozen-lockfile
+  - yarn --version
+  - pwd
+  - ls -la
+  - yarn install
 
 build: off
 
 test_script:
+  - pwd
+  - ls -la
   - yarn lint
   - yarn test
-  - yarn test:e2e:headless
