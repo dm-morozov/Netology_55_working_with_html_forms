@@ -1,8 +1,9 @@
+// popover.test.ts
 /**
  * @jest-environment jsdom
  */
 
-import Popover from "../popover";
+import Popover from "../../popover";
 
 describe("Проверка popover", () => {
   let button: HTMLElement;
@@ -36,7 +37,7 @@ describe("Проверка popover", () => {
     expect(popover).toBeNull();
   });
 
-  // 🔹 новые тесты для защитных return
+  // тесты для защитных return
   test("повторный вызов show() ничего не ломает", () => {
     const pop = new Popover(button, "Title", "Content");
     pop["show"](); // первый вызов
@@ -52,7 +53,7 @@ describe("Проверка popover", () => {
     const pop = new Popover(button, "Title", "Content");
 
     // hide() до show() должен просто вернуть
-    expect(() => pop["hide"]()).not.toThrow();
+    expect(() => pop["hide"]()).not.toThrow(); // не выбрасывает исключение
 
     button.click();
     const popover = document.querySelector(".popover");

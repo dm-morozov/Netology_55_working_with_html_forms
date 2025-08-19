@@ -13,17 +13,25 @@ export default class Modal {
 
   constructor(modalSelector: string) {
     this.modal = document.querySelector(modalSelector) as HTMLDivElement;
-    this.inputName = this.modal.querySelector(".input-name") as HTMLInputElement;
-    this.inputPrice = this.modal.querySelector(".input-price") as HTMLInputElement;
+    this.inputName = this.modal.querySelector(
+      ".input-name",
+    ) as HTMLInputElement;
+    this.inputPrice = this.modal.querySelector(
+      ".input-price",
+    ) as HTMLInputElement;
     this.errorName = this.modal.querySelector(".error-name") as HTMLDivElement;
-    this.errorPrice = this.modal.querySelector(".error-price") as HTMLDivElement;
+    this.errorPrice = this.modal.querySelector(
+      ".error-price",
+    ) as HTMLDivElement;
     this.btnSave = this.modal.querySelector(".btn-save") as HTMLButtonElement;
-    this.btnCancel = this.modal.querySelector(".btn-cancel") as HTMLButtonElement;
+    this.btnCancel = this.modal.querySelector(
+      ".btn-cancel",
+    ) as HTMLButtonElement;
 
     this.btnSave.addEventListener("click", () => this.handleSave());
     this.btnCancel.addEventListener("click", () => this.close());
-  
-        // Отслеживаем клавиши
+
+    // Отслеживаем клавиши
     this.inputName.addEventListener("keydown", (e) => this.handleKeyDown(e));
     this.inputPrice.addEventListener("keydown", (e) => this.handleKeyDown(e));
   }
@@ -42,21 +50,23 @@ export default class Modal {
 
   private validate(): boolean {
     let isValid = true;
-
     this.clearErrors();
-    if(!this.inputName.value.trim()) {
+
+    // Название
+    if (!this.inputName.value.trim()) {
       this.errorName.textContent = "Введите название товара";
       isValid = false;
     }
 
-    const price = Number(this.inputPrice.value);
-    if(!this.inputPrice.value.trim()) {
+    const value = this.inputPrice.value;
+
+    if (value === "") {
       this.errorPrice.textContent = "Введите цену товара";
       isValid = false;
-    } else if(isNaN(price)) {
+    } else if (isNaN(Number(value))) {
       this.errorPrice.textContent = "Цена должна быть числом";
       isValid = false;
-    } else if(price <= 0) {
+    } else if (Number(value) <= 0) {
       this.errorPrice.textContent = "Цена должна быть больше 0";
       isValid = false;
     }
@@ -66,8 +76,8 @@ export default class Modal {
 
   private handleSave() {
     console.log("Save");
-    
-    if(!this.validate()) return;
+
+    if (!this.validate()) return;
 
     const name = this.inputName.value;
     const price = Number(this.inputPrice.value);

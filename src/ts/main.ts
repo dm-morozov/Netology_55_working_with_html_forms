@@ -6,7 +6,6 @@ import Popover from "./popover";
 import Modal from "./modal";
 import ItemManager from "./itemManager";
 
-
 console.log("main.ts");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "Текст внутри всплывающего сообщения.",
   );
 });
-
 
 // Редактор списка* (задача со звёздочкой)
 const modal = new Modal(".modal");

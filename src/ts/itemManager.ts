@@ -3,16 +3,16 @@
 import { Item } from "./interface";
 import Modal from "./modal";
 
-
 export default class ItemManager {
   private items: Item[] = [];
   private tableBody: HTMLTableSectionElement;
   private modal: Modal;
   private editItemId: number | null = null; // id редактируемого элемента
 
-
   constructor(tableSelector: string, modal: Modal) {
-    this.tableBody = document.querySelector(tableSelector) as HTMLTableSectionElement;
+    this.tableBody = document.querySelector(
+      tableSelector,
+    ) as HTMLTableSectionElement;
     this.modal = modal;
 
     // callback модалки
@@ -24,8 +24,10 @@ export default class ItemManager {
       }
     });
 
-    this.tableBody.addEventListener("click", (event) => this.handleTableClick(event));
-  
+    this.tableBody.addEventListener("click", (event) =>
+      this.handleTableClick(event),
+    );
+
     // загружаем сохранённые данные при инициализации
     this.loadFromStorage();
     this.render();
@@ -58,7 +60,7 @@ export default class ItemManager {
   private render() {
     this.tableBody.innerHTML = "";
 
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       const row = document.createElement("tr");
       row.dataset.id = String(item.id);
 
@@ -104,7 +106,6 @@ export default class ItemManager {
     }
   }
 
-
   private saveToStorage() {
     localStorage.setItem("items", JSON.stringify(this.items));
   }
@@ -114,4 +115,3 @@ export default class ItemManager {
     this.items = data ? JSON.parse(data) : [];
   }
 }
-
