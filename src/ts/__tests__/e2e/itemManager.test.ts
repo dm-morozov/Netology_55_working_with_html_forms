@@ -10,7 +10,7 @@ describe("Редактор списка (ItemManager + Modal)", () => {
       // slowMo: 50,
     });
     page = await browser.newPage();
-    await page.goto("http://127.0.0.1:3000"); // твой сервер
+    await page.goto("http://127.0.0.1:3000");
   });
 
   afterAll(async () => {
@@ -62,13 +62,11 @@ describe("Редактор списка (ItemManager + Modal)", () => {
   });
 
   test("Удаление элемента", async () => {
-    // добавляем
     await page.click(".btn-add");
     await page.type(".input-name", "Товар для удаления");
     await page.type(".input-price", "70");
     await page.click(".btn-save");
 
-    // удаляем
     await page.click(".btn-delete");
 
     const rows = await page.$$eval(".table-body tr", (els) => els.length);
